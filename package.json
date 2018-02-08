@@ -1,0 +1,59 @@
+{
+  "name": "vim-colors",
+  "description": "Returns vim color configuration for given inputs",
+  "version": "0.0.0",
+  "author": "Pablo Varela <pablovarela182@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/pablopunk/vim-colors/issues",
+    "email": "pablovarela182@gmail.com"
+  },
+  "contributors": [
+    "Pablo Varela <pablovarela182@gmail.com>"
+  ],
+  "dependencies": {
+    "contrast": "^1.0.1"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "codecov": "*",
+    "nyc": "*",
+    "xo": "*"
+  },
+  "homepage": "https://github.com/pablopunk/vim-colors",
+  "keywords": [
+    "miny",
+    "vim",
+    "colors",
+    "color",
+    "configuration",
+    "scheme",
+    "colorscheme",
+    "theme",
+    "vi",
+    "nvim",
+    "neovim"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "html",
+      "text"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pablopunk/vim-colors"
+  },
+  "xo": {
+    "space": true,
+    "semicolon": false
+  },
+  "scripts": {
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint": "xo",
+    "test": "npm run lint && npm run test-coverage",
+    "test-coverage": "nyc ava"
+  }
+}
