@@ -31,8 +31,8 @@ a white foreground:
 const vimColors = require('vim-colors')
 
 const configString = vimColors('my-scheme', {
-  bg: '000000' // black,
-  fg: 'ffffff' // white
+  bg: '000000', // black
+  fg: 'ffffff'  // white
 })
 
 
