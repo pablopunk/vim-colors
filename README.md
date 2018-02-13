@@ -1,7 +1,5 @@
 # vim-colors
 
-> WIP. Don't use yet
-
 <p align="center">
   <a href="https://travis-ci.org/pablopunk/vim-colors"><img src="https://img.shields.io/travis/pablopunk/vim-colors.svg" /> </a>
   <a href="https://codecov.io/gh/pablopunk/vim-colors"><img src="https://img.shields.io/codecov/c/github/pablopunk/vim-colors.svg" /> </a>
@@ -32,7 +30,12 @@ const vimColors = require('vim-colors')
 
 const configString = vimColors('my-scheme', {
   bg: '000000', // black
-  fg: 'ffffff'  // white
+  fg: 'ffffff', // white
+  scheme: [
+    '4169e1', // royal blue
+    'ff6347'  // tomato
+    // You can add 6 colors to the scheme
+  ]
 })
 
 
