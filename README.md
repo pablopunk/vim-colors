@@ -34,7 +34,7 @@ const configString = vimColors('my-scheme', {
   scheme: [
     '4169e1', // royal blue
     'ff6347'  // tomato
-    // You can add 6 colors to the scheme
+    // You can add 4 colors to the scheme
   ]
 })
 

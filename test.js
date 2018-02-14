@@ -43,48 +43,12 @@ test('Fails without a name', t => {
   t.regex(err.message, /provide a name/i)
 })
 
-test('Highlights const/var/let/function/tags', t => {
-  testTypeAndColor(t, ['Function', 'StorageClass', 'Type', 'Identifier'], ['123456'], '123456')
-})
-
-test('Highlights export/import/from/require/numbers/special-chars', t => {
-  testTypeAndColor(t, ['Include', 'Constant', 'Number', 'SpecialChar'], [
-    '000000',
-    '123456'
-  ], '123456')
-})
-
-test('Highlights strings', t => {
-  testTypeAndColor(t, 'String', [
-    '000000',
-    '000000',
-    '123456'
-  ], '123456')
-})
-
-test('Highlights if/switch/case/default/for/characters/try/catch/throw', t => {
-  testTypeAndColor(t, ['Label', 'Repeat', 'Conditional', 'Character', 'Exception'], [
-    '000000',
-    '000000',
-    '000000',
-    '123456'
-  ], '123456')
-})
-
-test('Highlights true/false/class/this/extends/operators', t => {
-  testTypeAndColor(t, ['Boolean', 'Keyword', 'Special', 'Operator'], [
-    '000000',
-    '000000',
-    '000000',
-    '000000',
-    '123456'
-  ], '123456')
-})
-
-test('Highlights return/{}/()/[]', t => {
+test('Highlights function/var/const/let/{}/()/[]', t => {
   testTypeAndColor(t, [
-    'Statement',
-    'Delimiter',
+    'Function',
+    'StorageClass',
+    'Type',
+    'Identifier',
     // {}
     'jsBraces',
     'jsFuncBraces',
@@ -101,8 +65,35 @@ test('Highlights return/{}/()/[]', t => {
     // []
     'jsBrackets'
   ], [
+    '123456'
+  ], '123456')
+})
+
+test('Highlights export/import/from/require/numbers/special-chars', t => {
+  testTypeAndColor(t, ['Include', 'Constant', 'Number', 'SpecialChar'], [
+    '000000',
+    '123456'
+  ], '123456')
+})
+
+test('Highlights strings/if/switch/case/default/for', t => {
+  testTypeAndColor(t, ['String', 'Label', 'Repeat', 'Conditional'], [
     '000000',
     '000000',
+    '123456'
+  ], '123456')
+})
+
+test('Highlights characters/try/catch/throw/return/new/bool/class/this/extends/operators', t => {
+  testTypeAndColor(t, [
+    'Character',
+    'Exception',
+    'Statement',
+    'Boolean',
+    'Keyword',
+    'Special',
+    'Operator'
+  ], [
     '000000',
     '000000',
     '000000',
