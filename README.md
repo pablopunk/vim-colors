@@ -42,6 +42,12 @@ const configString = vimColors('my-scheme', {
 ```
 
 
+## Related
+
+- [vimcolors.org](https://vimcolors.org): The website that uses this module
+- [colors.vim](https://github.com/pablopunk/colors.vim): My custom colorschemes
+
+
 ## License
 
 MIT
