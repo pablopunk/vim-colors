@@ -36,6 +36,7 @@ module.exports = (name, colors) => {
 set background=${contrast(bg)}
 set t_Co=256
 hi Normal guifg=#${fg} guibg=#${bg} guisp=#${bg}
+hi LineNr guifg=#5e6c70 guibg=#${bg} guisp=#${bg}
 hi Comment guifg=#5e6c70 guibg=#${bg} guisp=#${bg}
 hi StorageClass guifg=#${scheme[0]} guisp=#${bg}
 hi Function guifg=#${scheme[0]} guisp=#${bg}

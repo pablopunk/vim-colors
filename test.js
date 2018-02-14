@@ -110,6 +110,7 @@ test('Highlights return/{}/()/[]', t => {
   ], '123456')
 })
 
-test('Highlights comments with default', t => {
+test('Highlights comments and line numbers with default', t => {
   testTypeAndColor(t, 'Comment', [], '5e6c70')
+  testTypeAndColor(t, 'LineNr', [], '5e6c70')
 })
