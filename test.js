@@ -43,12 +43,12 @@ test('Fails without a name', t => {
   t.regex(err.message, /provide a name/i)
 })
 
-test('Highlights const/var/let/function', t => {
-  testTypeAndColor(t, ['Function', 'StorageClass', 'Type'], ['123456'], '123456')
+test('Highlights const/var/let/function/tags', t => {
+  testTypeAndColor(t, ['Function', 'StorageClass', 'Type', 'Identifier'], ['123456'], '123456')
 })
 
-test('Highlights export/import/from/require', t => {
-  testTypeAndColor(t, ['Include', 'Constant'], [
+test('Highlights export/import/from/require/numbers/special-chars', t => {
+  testTypeAndColor(t, ['Include', 'Constant', 'Number', 'SpecialChar'], [
     '000000',
     '123456'
   ], '123456')
@@ -62,8 +62,8 @@ test('Highlights strings', t => {
   ], '123456')
 })
 
-test('Highlights if/switch/case/default/for', t => {
-  testTypeAndColor(t, ['Label', 'Repeat', 'Conditional'], [
+test('Highlights if/switch/case/default/for/characters/try/catch/throw', t => {
+  testTypeAndColor(t, ['Label', 'Repeat', 'Conditional', 'Character', 'Exception'], [
     '000000',
     '000000',
     '000000',

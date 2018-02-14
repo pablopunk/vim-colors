@@ -41,12 +41,17 @@ hi Comment guifg=#5e6c70 guibg=#${bg} guisp=#${bg}
 hi StorageClass guifg=#${scheme[0]} guisp=#${bg}
 hi Function guifg=#${scheme[0]} guisp=#${bg}
 hi Type guifg=#${scheme[0]} guisp=#${bg}
+hi Identifier guifg=#${scheme[0]} guisp=#${bg}
 hi Include guifg=#${scheme[1]} guisp=#${bg}
 hi Constant guifg=#${scheme[1]} guisp=#${bg}
+hi Number guifg=#${scheme[1]} guisp=#${bg}
+hi SpecialChar guifg=#${scheme[1]} guisp=#${bg}
 hi String guifg=#${scheme[2]} guisp=#${bg}
 hi Label guifg=#${scheme[3]} guisp=#${bg}
 hi Repeat guifg=#${scheme[3]} guisp=#${bg}
 hi Conditional guifg=#${scheme[3]} guisp=#${bg}
+hi Character guifg=#${scheme[3]} guisp=#${bg}
+hi Exception guifg=#${scheme[3]} guisp=#${bg}
 hi Boolean guifg=#${scheme[4]} guisp=#${bg}
 hi Keyword guifg=#${scheme[4]} guisp=#${bg}
 hi Special guifg=#${scheme[4]} guisp=#${bg}
