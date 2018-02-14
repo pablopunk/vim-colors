@@ -5,7 +5,7 @@ const stringMe = (str, color) =>
   `hi ${str} guifg=#${color}`
 
 const testTypeAndColor = (t, types, scheme, color) => {
-  const output = m('name', { scheme })
+  const output = m('name', {scheme})
   if (Array.isArray(types)) {
     types.map(type => t.regex(output, new RegExp(stringMe(type, color))))
   } else {

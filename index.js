@@ -30,9 +30,7 @@ module.exports = (name, colors) => {
     throw new TypeError('Please provide a name for the colorscheme')
   }
   const {bg, fg} = Object.assign({}, defaults, colors)
-  const scheme = colors
-   ? fillScheme(colors.scheme)
-   : []
+  const scheme = colors ? fillScheme(colors.scheme) : []
 
   return `
 set background=${contrast(bg)}
