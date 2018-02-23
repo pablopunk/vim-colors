@@ -68,7 +68,7 @@ const fgTypes = [
   ]
 ]
 
-const getFgConfig = ({ scheme, bg }) =>
+const getFgConfig = ({scheme, bg}) =>
     fgTypes.map((typeArr, typeIndex) =>
       typeArr.reduce((acc, curr) =>
         `${acc}
@@ -91,6 +91,6 @@ hi LineNr guifg=#5e6c70 guibg=#${bg}
 hi Comment guifg=#5e6c70 guibg=#${bg} gui=italic
 hi StorageClass guifg=#${scheme[0]} guibg=#${bg}
 hi Type guifg=#${scheme[0]} guibg=#${bg}
-${getFgConfig({ scheme, bg })}
+${getFgConfig({scheme, bg})}
 `
 }
