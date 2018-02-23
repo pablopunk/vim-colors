@@ -83,14 +83,15 @@ test('Highlights strings/if/switch/case/default/for', t => {
   ], '123456')
 })
 
-test('Highlights status line', t => {
+test('Highlights status line and popup menu', t => {
   const output = m('name', {
     bg: 'bbbbbb',
     fg: 'ffffff',
     scheme: ['', '', '123456']
   })
-  // Status line uses guibg for font and guifg for background
+  // Uses guibg for font and guifg for background
   t.regex(output, /hi StatusLine guifg=#123456 guibg=#bbbbbb/)
+  t.regex(output, /hi PMenu guifg=#123456 guibg=#bbbbbb/)
 })
 
 test('Highlights characters/try/catch/throw/return/new/bool/class/this/extends/operators', t => {

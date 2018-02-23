@@ -54,7 +54,8 @@ const fgTypes = [
     'Label',
     'Repeat',
     'Conditional',
-    'StatusLine'
+    'StatusLine',
+    'PMenu'
   ],
   [
     'Character',
