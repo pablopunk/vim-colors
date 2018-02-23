@@ -115,3 +115,8 @@ test('Highlights comments and line numbers with default', t => {
   testTypeAndColor(t, 'Comment', [], '5e6c70')
   testTypeAndColor(t, 'LineNr', [], '5e6c70')
 })
+
+test('Comments are italic', t => {
+  const output = m('name')
+  t.regex(output, /hi Comment guifg=#[a-z0-9]{6,} guibg=#[a-z0-9]{6,} gui=italic/)
+})

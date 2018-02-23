@@ -86,9 +86,9 @@ module.exports = (name, colors) => {
   return `
 set background=${contrast(bg)}
 set t_Co=256
-hi Normal guifg=#${fg} guibg=#${bg} guibg=#${bg}
-hi LineNr guifg=#5e6c70 guibg=#${bg} guibg=#${bg}
-hi Comment guifg=#5e6c70 guibg=#${bg} guibg=#${bg}
+hi Normal guifg=#${fg} guibg=#${bg}
+hi LineNr guifg=#5e6c70 guibg=#${bg}
+hi Comment guifg=#5e6c70 guibg=#${bg} gui=italic
 hi StorageClass guifg=#${scheme[0]} guibg=#${bg}
 hi Type guifg=#${scheme[0]} guibg=#${bg}
 ${getFgConfig({ scheme, bg })}
