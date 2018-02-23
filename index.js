@@ -39,7 +39,6 @@ hi Normal guifg=#${fg} guibg=#${bg} guibg=#${bg}
 hi LineNr guifg=#5e6c70 guibg=#${bg} guibg=#${bg}
 hi Comment guifg=#5e6c70 guibg=#${bg} guibg=#${bg}
 hi StorageClass guifg=#${scheme[0]} guibg=#${bg}
-hi Function guifg=#${scheme[0]} guibg=#${bg}
 hi Type guifg=#${scheme[0]} guibg=#${bg}
 hi Identifier guifg=#${scheme[0]} guibg=#${bg}
 hi Delimiter guifg=#${scheme[0]} guibg=#${bg}
@@ -55,6 +54,7 @@ hi jsTemplateBraces guifg=#${scheme[0]} guibg=#${bg}
 hi jsParens guifg=#${scheme[0]} guibg=#${bg}
 hi jsFuncParens guifg=#${scheme[0]} guibg=#${bg}
 hi jsBrackets guifg=#${scheme[0]} guibg=#${bg}
+hi Function guifg=#${scheme[1]} guibg=#${bg}
 hi Include guifg=#${scheme[1]} guibg=#${bg}
 hi Constant guifg=#${scheme[1]} guibg=#${bg}
 hi Number guifg=#${scheme[1]} guibg=#${bg}

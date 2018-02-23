@@ -45,7 +45,6 @@ test('Fails without a name', t => {
 
 test('Highlights function/var/const/let/{}/()/[]', t => {
   testTypeAndColor(t, [
-    'Function',
     'StorageClass',
     'Type',
     'Identifier',
@@ -69,8 +68,8 @@ test('Highlights function/var/const/let/{}/()/[]', t => {
   ], '123456')
 })
 
-test('Highlights export/import/from/require/numbers/special-chars', t => {
-  testTypeAndColor(t, ['Include', 'Constant', 'Number', 'SpecialChar'], [
+test('Highlights export/import/from/require/numbers/special-chars/function-name', t => {
+  testTypeAndColor(t, ['Include', 'Constant', 'Number', 'SpecialChar', 'Function'], [
     '000000',
     '123456'
   ], '123456')
