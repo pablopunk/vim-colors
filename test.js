@@ -4,8 +4,15 @@ const m = require('.')
 const stringMe = (str, color) =>
   `hi ${str} guifg=#${color}`
 
-const testTypeAndColor = (t, types, scheme, color) => {
-  const output = m('name', {scheme})
+const testTypeAndColor = (t, types, scheme, color, bg = false) => {
+  let output
+
+  if (bg) {
+    output = m('name', {bg, scheme})
+  } else {
+    output = m('name', {scheme})
+  }
+
   if (Array.isArray(types)) {
     types.map(type => t.regex(output, new RegExp(stringMe(type, color))))
   } else {
@@ -111,9 +118,14 @@ test('Highlights characters/try/catch/throw/return/new/bool/class/this/extends/o
   ], '123456')
 })
 
-test('Highlights comments and line numbers with default', t => {
+test('Highlights comments and line numbers with default (black bg)', t => {
   testTypeAndColor(t, 'Comment', [], '5e6c70')
   testTypeAndColor(t, 'LineNr', [], '5e6c70')
+})
+
+test('Highlights comments and line numbers with default (white bg)', t => {
+  testTypeAndColor(t, 'Comment', [], 'a0a0a0', 'ffffff')
+  testTypeAndColor(t, 'LineNr', [], 'a0a0a0', 'ffffff')
 })
 
 test('Comments are italic', t => {

@@ -6,6 +6,11 @@ const defaults = {
   scheme: []
 }
 
+const comments = {
+  dark: '5e6c70',
+  light: 'a0a0a0'
+}
+
 const fillScheme = scheme => {
   if (!scheme || !Array.isArray(scheme)) {
     scheme = []
@@ -82,12 +87,14 @@ module.exports = (name, colors) => {
   const {bg, fg} = Object.assign({}, defaults, colors)
   const scheme = colors ? fillScheme(colors.scheme) : []
 
+  const darkOrLight = contrast(bg)
+
   return `
-set background=${contrast(bg)}
+set background=${darkOrLight}
 set t_Co=256
 hi Normal guifg=#${fg} guibg=#${bg}
-hi LineNr guifg=#5e6c70 guibg=#${bg}
-hi Comment guifg=#5e6c70 guibg=#${bg} gui=italic
+hi LineNr guifg=#${comments[darkOrLight]} guibg=#${bg}
+hi Comment guifg=#${comments[darkOrLight]} guibg=#${bg} gui=italic
 hi StorageClass guifg=#${scheme[0]} guibg=#${bg}
 hi Type guifg=#${scheme[0]} guibg=#${bg}
 ${getFgConfig({scheme, bg})}
