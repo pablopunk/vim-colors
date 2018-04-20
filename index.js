@@ -95,8 +95,6 @@ set t_Co=256
 hi Normal guifg=#${fg} guibg=#${bg}
 hi LineNr guifg=#${comments[darkOrLight]} guibg=#${bg}
 hi Comment guifg=#${comments[darkOrLight]} guibg=#${bg} gui=italic
-hi StorageClass guifg=#${scheme[0]} guibg=#${bg}
-hi Type guifg=#${scheme[0]} guibg=#${bg}
 ${getFgConfig({scheme, bg})}
 `
 }
