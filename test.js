@@ -132,3 +132,13 @@ test('Comments are italic', t => {
   const output = m('name')
   t.regex(output, /hi Comment guifg=#[a-z0-9]{6,} guibg=#[a-z0-9]{6,} gui=italic/)
 })
+
+test('It contains the given name', t => {
+  const output = m('custom-name')
+  t.regex(output, /let g:colors_name = "custom-name"/)
+})
+
+test('The name does not contain spaces', t => {
+  const output = m('my custom name')
+  t.regex(output, /let g:colors_name = "my-custom-name"/)
+})

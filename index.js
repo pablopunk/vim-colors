@@ -73,6 +73,18 @@ const fgTypes = [
   ]
 ]
 
+const normalizeName = str => {
+  let normalized = `${str}`
+
+  normalized = normalized.replace(/[^a-zA-Z0-9_]/g, '-').replace(/-{2,}/g, '-').replace(/^-/, '').replace(/-$/, '')
+
+  if (/^\d/.test(normalized)) {
+    normalized = `-${normalized}`
+  }
+
+  return normalized
+}
+
 const getFgConfig = ({scheme, bg}) =>
     fgTypes.map((typeArr, typeIndex) =>
       typeArr.reduce((acc, curr) =>
@@ -90,6 +102,7 @@ module.exports = (name, colors) => {
   const darkOrLight = contrast(bg)
 
   return `
+let g:colors_name = "${normalizeName(name)}"
 set background=${darkOrLight}
 set t_Co=256
 hi Normal guifg=#${fg} guibg=#${bg}
