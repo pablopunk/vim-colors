@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "ava": "*",
-    "codecov": "*",
+    "codecov": "^3.0.2",
     "nyc": "*",
     "xo": "*"
   },
