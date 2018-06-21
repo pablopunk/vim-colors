@@ -40,6 +40,14 @@ test('Sets black background in regular font', t => {
   t.regex(m('name', {bg: '000000'}), /hi Normal guifg=#[a-z0-9]{6,} guibg=#000000/i)
 })
 
+test('Resets the highlights', t => {
+  t.regex(m('name'), /hi clear/)
+})
+
+test('Resets the syntax', t => {
+  t.regex(m('name'), /syntax reset/)
+})
+
 test('Sets t_Co to 256', t => {
   t.regex(m('name'), /set t_Co=256/)
 })
@@ -141,4 +149,9 @@ test('It contains the given name', t => {
 test('The name does not contain spaces', t => {
   const output = m('my custom name')
   t.regex(output, /let g:colors_name = "my-custom-name"/)
+})
+
+test('Highlights search with default color', t => {
+  const output = m('whatever')
+  t.regex(output, /hi Search guibg=#1ee8c6 guifg=#000000/)
 })

@@ -86,9 +86,9 @@ const normalizeName = str => {
 }
 
 const getFgConfig = ({scheme, bg}) =>
-    fgTypes.map((typeArr, typeIndex) =>
-      typeArr.reduce((acc, curr) =>
-        `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=#${bg}
+  fgTypes.map((typeArr, typeIndex) =>
+    typeArr.reduce((acc, curr) =>
+      `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=#${bg}
 `
       , '')).join('')
 
@@ -102,12 +102,15 @@ module.exports = (name, colors) => {
   const darkOrLight = contrast(bg)
 
   return `
+hi clear
+syntax reset
 let g:colors_name = "${normalizeName(name)}"
 set background=${darkOrLight}
 set t_Co=256
 hi Normal guifg=#${fg} guibg=#${bg}
 hi LineNr guifg=#${comments[darkOrLight]} guibg=#${bg}
 hi Comment guifg=#${comments[darkOrLight]} guibg=#${bg} gui=italic
+hi Search guibg=#1ee8c6 guifg=#000000
 ${getFgConfig({scheme, bg})}
 `
 }
