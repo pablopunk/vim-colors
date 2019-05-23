@@ -1,9 +1,6 @@
 # vim-colors
 
 <p align="center">
-  <a href="https://travis-ci.org/pablopunk/vim-colors"><img src="https://img.shields.io/travis/pablopunk/vim-colors.svg" /> </a>
-  <a href="https://codecov.io/gh/pablopunk/vim-colors"><img src="https://img.shields.io/codecov/c/github/pablopunk/vim-colors.svg" /> </a>
-  <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" /> </a>
   <a href="https://github.com/pablopunk/miny"><img src="https://img.shields.io/badge/made_with-miny-1eced8.svg" /> </a>
   <a href="https://www.npmjs.com/package/vim-colors"><img src="https://img.shields.io/npm/dt/vim-colors.svg" /></a>
 </p>
@@ -12,13 +9,11 @@
   <i>Returns vim color configuration for given inputs</i>
 </p>
 
-
 ## Install
 
 ```sh
 npm install vim-colors
 ```
-
 
 ## Usage
 
@@ -31,30 +26,27 @@ const vimColors = require('vim-colors')
 const configString = vimColors('my-scheme', {
   bg: '000000', // black
   fg: 'ffffff', // white
+  comments: 'cccccc', // gray
   scheme: [
-    '4169e1', // royal blue
-    'ff6347'  // tomato
-    // You can add 4 colors to the scheme
+    '4169e1'
+    'ff6347'
+    // You can add up to 6 colors
   ]
 })
 
 
 ```
 
-
 ## Related
 
 - [vimcolors.org](https://vimcolors.org): The website that uses this module
-
 
 ## License
 
 MIT
 
-
 ## Author
 
-| ![me](https://gravatar.com/avatar/fa50aeff0ddd6e63273a068b04353d9d?size=100)           |
-| --------------------------------- |
-| [Pablo Varela](https://pablo.life)   |
-
+| ![me](https://gravatar.com/avatar/fa50aeff0ddd6e63273a068b04353d9d?size=100) |
+| ---------------------------------------------------------------------------- |
+| [Pablo Varela](https://pablo.life)                                           |
