@@ -1,7 +1,7 @@
 {
   "name": "vim-colors",
   "description": "Returns vim color configuration for given inputs",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "author": "Pablo Varela <pablovarela182@gmail.com>",
   "bugs": {
     "url": "https://github.com/pablopunk/vim-colors/issues",
