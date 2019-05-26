@@ -10,14 +10,11 @@
   "contributors": [
     "Pablo Varela <pablovarela182@gmail.com>"
   ],
-  "dependencies": {
-    "contrast": "^1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "ava": "*",
-    "codecov": "^3.0.2",
-    "nyc": "*",
-    "xo": "*"
+    "husky": "*",
+    "pretty-quick": "*",
+    "prettier": "*"
   },
   "homepage": "https://github.com/pablopunk/vim-colors",
   "keywords": [
@@ -31,29 +28,25 @@
     "theme",
     "vi",
     "nvim",
-    "neovim"
+    "neovim",
+    "generator",
+    "scaffold"
   ],
   "license": "MIT",
   "main": "index.js",
-  "nyc": {
-    "reporter": [
-      "lcov",
-      "html",
-      "text"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pablopunk/vim-colors"
   },
-  "xo": {
-    "space": true,
-    "semicolon": false
+  "scripts": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
-  "scripts": {
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo",
-    "test": "npm run lint && npm run test-coverage",
-    "test-coverage": "nyc ava"
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2
   }
 }
