@@ -53,7 +53,6 @@ const fgTypes = [
     'SpecialComment',
     'Title',
     'PreCondit',
-    'Include',
     'Debug',
     'SpecialChar',
     'Conditional',
@@ -63,7 +62,7 @@ const fgTypes = [
     'Delimiter',
     'Number',
     'CursorLineNR',
-    ' Define',
+    'Define',
     'MoreMsg',
     'Tag',
     'String',
@@ -73,11 +72,13 @@ const fgTypes = [
     'GitGutterChange',
     'cssColor'
   ],
-  ['Function', 'StorageClass'],
+  ['Function'],
   [
     'Directory',
     'markdownLinkText',
     'javaScriptBoolean',
+    'Include',
+    'Storage',
     'cssClassName',
     'cssClassNameDot'
   ],
