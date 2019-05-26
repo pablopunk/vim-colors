@@ -25,33 +25,63 @@ const fillScheme = scheme => {
 }
 
 const fgTypes = [
-  ['StorageClass', 'Type', 'Identifier', 'Delimiter'],
-  ['Function', 'Include', 'Constant', 'Number', 'SpecialChar'],
-  ['String'],
-  ['Label', 'Repeat', 'Conditional', 'StatusLine', 'PMenu'],
   [
-    'jsBraces',
-    'jsFuncBraces',
-    'jsIfElseBraces',
-    'jsTryCatchBraces',
-    'jsModuleBraces',
-    'jsObjectBraces',
-    'jsFinallyBraces',
-    'jsSwitchBraces',
-    'jsTemplateBraces',
-    'jsParens',
-    'jsFuncParens',
-    'jsBrackets'
+    'DiffText',
+    'ErrorMsg',
+    'WarningMsg',
+    'PreProc',
+    'Exception',
+    'Error',
+    'DiffDelete',
+    'GitGutterDelete',
+    'GitGutterChangeDelete',
+    'cssIdentifier',
+    'cssImportant',
+    'Type',
+    'Identifier'
   ],
   [
-    'Character',
-    'Exception',
-    'Statement',
-    'Boolean',
-    'Keyword',
+    'PMenuSel',
+    'Constant',
+    'Repeat',
+    'DiffAdd',
+    'GitGutterAdd',
+    'cssIncludeKeyword'
+  ],
+  [
+    'IncSearch',
+    'SpecialComment',
+    'Title',
+    'PreCondit',
+    'Include',
+    'Debug',
+    'SpecialChar',
+    'Conditional',
+    'Todo',
     'Special',
-    'Operator'
-  ]
+    'Label',
+    'Delimiter',
+    'Number',
+    'CursorLineNR',
+    ' Define',
+    'MoreMsg',
+    'Tag',
+    'String',
+    'MatchParen',
+    'Macro',
+    'DiffChange',
+    'GitGutterChange',
+    'cssColor'
+  ],
+  ['Function', 'StorageClass'],
+  [
+    'Directory',
+    'markdownLinkText',
+    'javaScriptBoolean',
+    'cssClassName',
+    'cssClassNameDot'
+  ],
+  ['Statement', 'Operator', 'Keyword', 'cssAttr']
 ]
 
 const normalizeName = str => {
@@ -75,7 +105,7 @@ const getFgConfig = ({ scheme, bg }) =>
     .map((typeArr, typeIndex) =>
       typeArr.reduce(
         (acc, curr) =>
-          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=#${bg}
+          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=NONE
 `,
         ''
       )
@@ -95,7 +125,7 @@ syntax reset
 let g:colors_name = "${normalizeName(name)}"
 set background=${Boolean(dark) ? 'dark' : 'light'}
 set t_Co=256
-hi Normal guifg=#${fg} guibg=#${bg}
+hi Normal guifg=#${fg} ctermbg=NONE guibg=NONE
 hi Title guifg=#${fg}
 hi LineNr guifg=#${comments}
 hi Comment guifg=#${comments} gui=italic
