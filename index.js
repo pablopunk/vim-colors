@@ -129,6 +129,7 @@ set t_Co=256
 hi Normal guifg=#${fg} ctermbg=NONE guibg=NONE
 hi Title guifg=#${fg}
 hi LineNr guifg=#${comments}
+hi NonText guifg=#${comments}
 hi Comment guifg=#${comments} gui=italic
 hi Search guibg=#1ee8c6 guifg=#000000
 ${getFgConfig({ scheme, bg })}
