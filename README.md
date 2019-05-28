@@ -18,7 +18,7 @@ npm install vim-colors
 ## Usage
 
 This results into a `viml` configuration script with a dark background (black) and
-a white foreground:
+a white foreground
 
 ```js
 const vimColors = require('vim-colors')
@@ -26,6 +26,7 @@ const vimColors = require('vim-colors')
 const configString = vimColors('my-scheme', {
   bg: '000000', // black
   fg: 'ffffff', // white
+  altBg: '002244' // navy blue
   comments: 'cccccc', // gray
   scheme: [
     '4169e1'

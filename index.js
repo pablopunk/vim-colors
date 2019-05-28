@@ -3,6 +3,7 @@ const defaults = {
   light: false,
   bg: '000000',
   fg: 'ffffff',
+  altBg: '222222',
   comments: '444444',
   scheme: []
 }
@@ -117,7 +118,7 @@ module.exports = (name, colors) => {
   if (!name || typeof name !== 'string') {
     throw new TypeError('Please provide a name for the colorscheme')
   }
-  const { comments, dark, bg, fg } = Object.assign({}, defaults, colors)
+  const { comments, dark, bg, fg, altBg } = Object.assign({}, defaults, colors)
   const scheme = colors ? fillScheme(colors.scheme) : []
 
   return `
@@ -127,6 +128,7 @@ let g:colors_name = "${normalizeName(name)}"
 set background=${Boolean(dark) ? 'dark' : 'light'}
 set t_Co=256
 hi Normal guifg=#${fg} ctermbg=NONE guibg=NONE
+hi Pmenu guifg=#${fg} guibg=#${altBg}
 hi Title guifg=#${fg}
 hi LineNr guifg=#${comments}
 hi NonText guifg=#${comments}
