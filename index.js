@@ -47,7 +47,8 @@ const fgTypes = [
     'Repeat',
     'DiffAdd',
     'GitGutterAdd',
-    'cssIncludeKeyword'
+    'cssIncludeKeyword',
+    'Keyworkd'
   ],
   [
     'IncSearch',
@@ -83,7 +84,7 @@ const fgTypes = [
     'cssClassName',
     'cssClassNameDot'
   ],
-  ['Statement', 'Operator', 'Keyword', 'cssAttr']
+  ['Statement', 'Operator', 'cssAttr']
 ]
 
 const normalizeName = str => {
