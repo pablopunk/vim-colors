@@ -134,6 +134,7 @@ hi Title guifg=#${fg}
 hi LineNr guifg=#${comments}
 hi NonText guifg=#${comments}
 hi Comment guifg=#${comments} gui=italic
+hi CursorLine guibg=#${dark ? '454545' : 'e3e3e3'}
 hi Search guibg=#1ee8c6 guifg=#000000
 ${getFgConfig({ scheme, bg })}
 `
