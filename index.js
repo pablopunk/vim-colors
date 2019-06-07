@@ -139,7 +139,7 @@ hi TabLineFill gui=NONE
 hi TabLine guibg=#${menus}
 hi StatusLine gui=bold guibg=#${menus}
 hi StatusLineNC gui=NONE guibg=#${menus}
-hi Search guibg=#1ee8c6 guifg=#000000
+hi Search guibg=#${comments} guifg=#${fg}
 hi VertSplit gui=NONE guifg=#${menus} guibg=NONE
 ${getFgConfig({ scheme, bg })}
 `
