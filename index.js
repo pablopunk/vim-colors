@@ -137,7 +137,8 @@ hi Comment guifg=#${comments} gui=italic
 hi CursorLine guibg=#${menus}
 hi TabLineFill gui=NONE
 hi TabLine guibg=#${menus}
-hi StatusLine gui=NONE guibg=#d3d3d3
+hi StatusLine gui=bold guibg=#${menus}
+hi StatusLineNC gui=NONE guibg=#${menus}
 hi Search guibg=#1ee8c6 guifg=#000000
 ${getFgConfig({ scheme, bg })}
 `
