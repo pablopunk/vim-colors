@@ -3,7 +3,7 @@ const defaults = {
   light: false,
   bg: '000000',
   fg: 'ffffff',
-  altBg: '222222',
+  menus: '222222',
   comments: '444444',
   scheme: []
 }
@@ -119,7 +119,7 @@ module.exports = (name, colors) => {
   if (!name || typeof name !== 'string') {
     throw new TypeError('Please provide a name for the colorscheme')
   }
-  const { comments, dark, bg, fg, altBg } = Object.assign({}, defaults, colors)
+  const { comments, dark, bg, fg, menus } = Object.assign({}, defaults, colors)
   const scheme = colors ? fillScheme(colors.scheme) : []
 
   return `
@@ -129,12 +129,15 @@ let g:colors_name = "${normalizeName(name)}"
 set background=${Boolean(dark) ? 'dark' : 'light'}
 set t_Co=256
 hi Normal guifg=#${fg} ctermbg=NONE guibg=#${bg}
-hi Pmenu guifg=#${fg} guibg=#${altBg}
+hi Pmenu guifg=#${fg} guibg=#${menus}
 hi Title guifg=#${fg}
 hi LineNr guifg=#${comments}
 hi NonText guifg=#${comments}
 hi Comment guifg=#${comments} gui=italic
-hi CursorLine guibg=#${dark ? '454545' : 'e3e3e3'}
+hi CursorLine guibg=#${menus}
+hi TabLineFill gui=NONE
+hi TabLine guibg=#${menus}
+hi StatusLine gui=NONE guibg=#d3d3d3
 hi Search guibg=#1ee8c6 guifg=#000000
 ${getFgConfig({ scheme, bg })}
 `
