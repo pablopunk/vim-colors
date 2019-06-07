@@ -48,7 +48,7 @@ const fgTypes = [
     'DiffAdd',
     'GitGutterAdd',
     'cssIncludeKeyword',
-    'Keyworkd'
+    'Keyword'
   ],
   [
     'IncSearch',
