@@ -126,7 +126,7 @@ module.exports = (name, colors) => {
 hi clear
 syntax reset
 let g:colors_name = "${normalizeName(name)}"
-set background=${Boolean(dark) ? 'dark' : 'light'}
+set background=${dark ? 'dark' : 'light'}
 set t_Co=256
 hi Normal guifg=#${fg} ctermbg=NONE guibg=#${bg}
 hi Pmenu guifg=#${fg} guibg=#${menus}
@@ -141,6 +141,7 @@ hi StatusLine gui=bold guibg=#${menus} guifg=#${fg}
 hi StatusLineNC gui=NONE guibg=#${menus} guifg=#${fg}
 hi Search guibg=#${comments} guifg=#${fg}
 hi VertSplit gui=NONE guifg=#${menus} guibg=NONE
+hi Visual gui=NONE guibg=#${menus}
 ${getFgConfig({ scheme, bg })}
 `
 }
