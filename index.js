@@ -127,7 +127,7 @@ syntax reset
 let g:colors_name = "${normalizeName(name)}"
 set background=${dark ? 'dark' : 'light'}
 set t_Co=256
-hi Normal guifg=#${fg} ctermbg=NONE guibg=#${bg}
+hi Normal guifg=#${fg} ctermbg=NONE guibg=NONE
 
 ${getFgConfig({ scheme, bg })}
 
