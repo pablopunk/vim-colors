@@ -132,6 +132,7 @@ hi Normal guifg=#${fg} ctermbg=NONE guibg=NONE
 ${getFgConfig({ scheme, bg })}
 
 hi Pmenu guifg=#${fg} guibg=#${menus}
+hi SignColumn guibg=NONE
 hi Title guifg=#${fg}
 hi LineNr guifg=#${comments}
 hi NonText guifg=#${comments}
