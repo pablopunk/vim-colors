@@ -27,16 +27,14 @@ const configString = vimColors('my-scheme', {
   dark: true,
   bg: '000000', // black
   fg: 'ffffff', // white
-  menus: '002244' // navy blue
+  menus: '002244', // navy blue
   comments: 'cccccc', // gray
   scheme: [
-    '4169e1'
+    '4169e1',
     'ff6347'
     // You can add up to 6 colors
   ]
 })
-
-
 ```
 
 ## Related
