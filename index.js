@@ -118,7 +118,7 @@ module.exports = (name, colors) => {
   if (!name || typeof name !== 'string') {
     throw new TypeError('Please provide a name for the colorscheme')
   }
-  const { comments, dark, bg, fg, menus } = Object.assign({}, defaults, colors)
+  const { comments, dark, bg, fg, menus } = { ...defaults, colors }
   const scheme = colors ? fillScheme(colors.scheme) : []
 
   return `hi clear
