@@ -96,10 +96,6 @@ const normalizeName = str => {
     .replace(/^-/, '')
     .replace(/-$/, '')
 
-  if (/^\d/.test(normalized)) {
-    normalized = `-${normalized}`
-  }
-
   return normalized
 }
 
