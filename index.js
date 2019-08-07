@@ -52,7 +52,6 @@ const fgTypes = [
   ],
   [
     'IncSearch',
-    'SpecialComment',
     'Title',
     'PreCondit',
     'Debug',
@@ -114,7 +113,7 @@ module.exports = (name, colors) => {
   if (!name || typeof name !== 'string') {
     throw new TypeError('Please provide a name for the colorscheme')
   }
-  const { comments, dark, bg, fg, menus } = { ...defaults, colors }
+  const { comments, dark, bg, fg, menus } = { ...defaults, ...colors }
   const scheme = colors ? fillScheme(colors.scheme) : []
 
   return `hi clear
@@ -132,6 +131,7 @@ hi Title guifg=#${fg}
 hi LineNr guifg=#${comments} guibg=#${bg}
 hi NonText guifg=#${comments} guibg=#${bg}
 hi Comment guifg=#${comments} gui=italic guibg=#${bg}
+hi SpecialComment guifg=#${comments} gui=italic guibg=#${bg}
 hi CursorLine guibg=#${menus}
 hi TabLineFill gui=NONE
 hi TabLine guibg=#${menus}
