@@ -104,7 +104,7 @@ const getFgConfig = ({ scheme, bg }) =>
     .map((typeArr, typeIndex) =>
       typeArr.reduce(
         (acc, curr) =>
-          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=NONE\n`,
+          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=#${bg}\n`,
         ''
       )
     )
@@ -122,16 +122,16 @@ syntax reset
 let g:colors_name = "${normalizeName(name)}"
 set background=${dark ? 'dark' : 'light'}
 set t_Co=256
-hi Normal guifg=#${fg} ctermbg=NONE guibg=NONE
+hi Normal guifg=#${fg} ctermbg=NONE guibg=#${bg} gui=NONE
 
 ${getFgConfig({ scheme, bg })}
 
 hi Pmenu guifg=#${fg} guibg=#${menus}
-hi SignColumn guibg=NONE
+hi SignColumn guibg=#${bg}
 hi Title guifg=#${fg}
-hi LineNr guifg=#${comments}
-hi NonText guifg=#${comments}
-hi Comment guifg=#${comments} gui=italic
+hi LineNr guifg=#${comments} guibg=#${bg}
+hi NonText guifg=#${comments} guibg=#${bg}
+hi Comment guifg=#${comments} gui=italic guibg=#${bg}
 hi CursorLine guibg=#${menus}
 hi TabLineFill gui=NONE
 hi TabLine guibg=#${menus}
