@@ -98,12 +98,12 @@ const normalizeName = str => {
   return normalized
 }
 
-const getFgConfig = scheme =>
+const getFgConfig = ({ scheme, bg }) =>
   fgTypes
     .map((typeArr, typeIndex) =>
       typeArr.reduce(
         (acc, curr) =>
-          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=NONE\n`,
+          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=#${bg}\n`,
         ''
       )
     )
@@ -123,7 +123,7 @@ set background=${dark ? 'dark' : 'light'}
 set t_Co=256
 hi Normal guifg=#${fg} ctermbg=NONE guibg=#${bg} gui=NONE
 
-${getFgConfig(scheme)}
+${getFgConfig({ scheme, bg })}
 
 hi Pmenu guifg=#${fg} guibg=#${menus}
 hi SignColumn guibg=#${bg}
