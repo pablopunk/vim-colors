@@ -102,7 +102,8 @@ const getFgConfig = scheme =>
   fgTypes
     .map((typeArr, typeIndex) =>
       typeArr.reduce(
-        (acc, curr) => `${acc}hi ${curr} guifg=#${scheme[typeIndex]}\n`,
+        (acc, curr) =>
+          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=NONE\n`,
         ''
       )
     )
