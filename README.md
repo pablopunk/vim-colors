@@ -9,6 +9,8 @@
   <i>Returns vim color configuration for given inputs</i>
 </p>
 
+> This is an npm package so you can use it in your Javascript projects. If you only want to generate a scheme, use [vimcolors.org](https://vimcolors.org)
+
 ## Install
 
 ```sh
