@@ -10,7 +10,9 @@
   "contributors": [
     "Pablo Varela <pablovarela182@gmail.com>"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "tinycolor2": "^1.4.1"
+  },
   "devDependencies": {
     "husky": "*",
     "pretty-quick": "*",

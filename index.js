@@ -1,3 +1,5 @@
+const tinyColor = require('tinycolor2')
+
 const defaults = {
   dark: true,
   light: false,
@@ -103,7 +105,7 @@ const getFgConfig = ({ scheme, bg }) =>
     .map((typeArr, typeIndex) =>
       typeArr.reduce(
         (acc, curr) =>
-          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=#${bg}\n`,
+          `${acc}hi ${curr} guifg=#${scheme[typeIndex]} guibg=NONE\n`,
         ''
       )
     )
@@ -115,6 +117,13 @@ module.exports = (name, colors) => {
   }
   const { comments, dark, bg, fg, menus } = { ...defaults, ...colors }
   const scheme = colors ? fillScheme(colors.scheme) : []
+  const dim = dark
+    ? tinyColor(fg)
+        .darken(40)
+        .toHex()
+    : tinyColor(fg)
+        .lighten(40)
+        .toHex()
 
   return `hi clear
 syntax reset
@@ -128,13 +137,13 @@ ${getFgConfig({ scheme, bg })}
 hi Pmenu guifg=#${fg} guibg=#${menus}
 hi SignColumn guibg=#${bg}
 hi Title guifg=#${fg}
-hi LineNr guifg=#${comments} guibg=#${bg}
+hi LineNr guifg=#${dim} guibg=#${bg}
 hi NonText guifg=#${comments} guibg=#${bg}
-hi Comment guifg=#${comments} gui=italic guibg=#${bg}
+hi Comment guifg=#${comments} gui=italic
 hi SpecialComment guifg=#${comments} gui=italic guibg=#${bg}
 hi CursorLine guibg=#${menus}
-hi TabLineFill gui=NONE
-hi TabLine guibg=#${menus}
+hi TabLineFill gui=NONE guibg=#${menus}
+hi TabLine guifg=#${dim} guibg=#${menus} gui=NONE
 hi StatusLine gui=bold guibg=#${menus} guifg=#${fg}
 hi StatusLineNC gui=NONE guibg=#${bg} guifg=#${fg}
 hi Search guibg=#${comments} guifg=#${dark ? fg : bg}
