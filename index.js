@@ -7,10 +7,10 @@ const defaults = {
   fg: 'ffffff',
   menus: '222222',
   comments: '444444',
-  scheme: []
+  scheme: [],
 }
 
-const fillScheme = scheme => {
+const fillScheme = (scheme) => {
   if (!scheme || !Array.isArray(scheme)) {
     scheme = []
   }
@@ -41,7 +41,7 @@ const fgTypes = [
     'cssIdentifier',
     'cssImportant',
     'Type',
-    'Identifier'
+    'Identifier',
   ],
   [
     'PMenuSel',
@@ -50,7 +50,7 @@ const fgTypes = [
     'DiffAdd',
     'GitGutterAdd',
     'cssIncludeKeyword',
-    'Keyword'
+    'Keyword',
   ],
   [
     'IncSearch',
@@ -73,7 +73,7 @@ const fgTypes = [
     'Macro',
     'DiffChange',
     'GitGutterChange',
-    'cssColor'
+    'cssColor',
   ],
   ['Function'],
   [
@@ -83,12 +83,12 @@ const fgTypes = [
     'Include',
     'Storage',
     'cssClassName',
-    'cssClassNameDot'
+    'cssClassNameDot',
   ],
-  ['Statement', 'Operator', 'cssAttr']
+  ['Statement', 'Operator', 'cssAttr'],
 ]
 
-const normalizeName = str => {
+const normalizeName = (str) => {
   let normalized = `${str}`
 
   normalized = normalized
@@ -118,12 +118,8 @@ module.exports = (name, colors) => {
   const { comments, dark, bg, fg, menus } = { ...defaults, ...colors }
   const scheme = colors ? fillScheme(colors.scheme) : []
   const dim = dark
-    ? tinyColor(fg)
-        .darken(40)
-        .toHex()
-    : tinyColor(fg)
-        .lighten(40)
-        .toHex()
+    ? tinyColor(fg).darken(40).toHex()
+    : tinyColor(fg).lighten(40).toHex()
 
   return `hi clear
 syntax reset
@@ -140,7 +136,7 @@ hi Title guifg=#${fg}
 hi LineNr guifg=#${dim} guibg=#${bg}
 hi NonText guifg=#${comments} guibg=#${bg}
 hi Comment guifg=#${comments} gui=italic
-hi SpecialComment guifg=#${comments} gui=italic guibg=#${bg}
+hi SpecialComment guifg=#${comments} gui=italic guibg=NONE
 hi CursorLine guibg=#${menus}
 hi TabLineFill gui=NONE guibg=#${menus}
 hi TabLine guifg=#${dim} guibg=#${menus} gui=NONE
